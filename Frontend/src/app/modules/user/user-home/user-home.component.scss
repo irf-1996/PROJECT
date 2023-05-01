@@ -1,0 +1,23 @@
+.featured {
+    border: none !important;
+}
+
+@media screen and (max-width: 980px) {
+    iframe{
+        width: 760px;
+        height: 430px;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    iframe{
+        width: 345px;
+        height: 250px;
+    }
+}
+
+.topMargin{
+    margin-top:100px;
+}
+
+@import 'src/assets/styles/global_style.scss';

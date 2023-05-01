@@ -1,0 +1,127 @@
+<div class="bg-slate-400 rounded-xl p-16">
+    <h1
+      class="mb-4 text-xl text-center font-bold leading-none tracking-tight text-teal-50 md:text-3xl lg:text-5xl dark:text-white"
+    >
+      Candidates
+    </h1>
+  
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <div
+        class="flex items-center justify-between p-4 bg-white dark:bg-gray-900"
+      ></div>
+  
+      <!-- *table  -->
+
+      <div class="table-container">
+
+        <table  class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead
+            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+          >
+            <tr>
+              <th scope="col" class="px-6 py-3">Sl no</th>
+              <th scope="col" class="px-6 py-3">Name</th>
+              <th scope="col" class="px-6 py-3">Position</th>
+
+              <th scope="col" class="px-6 py-3">Email</th>
+              <th scope="col" class="px-6 py-3">View</th>
+
+              <th scope="col" class="px-6 py-3">Approve</th>
+              <th scope="col" class="px-6 py-3">Reject</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr
+              *ngFor="let item of lists; let i = index; trackBy: trackByFn"
+              [class.delete]="item === deletingItem"
+              class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+            >
+              <th
+                scope="row"
+                class="flex items-center px-6 py-4 text-gray-500 whitespace-nowrap dark:text-white"
+              >
+                <div class="text-sm font-semibold text-center">{{ i + 1 }}</div>
+              </th>
+  
+              <td class="px-6 py-4">
+                <div class="flex items-center">
+                  <div class="font-normal text-gray-500">
+                    {{ item.name }}
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4">
+                <div class="flex items-center">
+                  <div class="font-normal text-gray-500">
+                    {{ item.position }}
+                  </div>
+                </div>
+              </td>
+  
+              <td class="px-6 py-4">
+                <div class="flex items-center">
+                  <div class="font-normal text-gray-500">
+                    {{ item.email }}
+                  </div>
+                </div>
+              </td>
+  
+              <td class="px-6 py-4">
+                <a
+                  (click)="viewItem(item)"
+                  class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </a>
+              </td>
+              <ng-container>
+                <td class="px-6 py-4">
+                  <a
+                    (click)="approveItem(item)"
+                    class="font-medium text-green-600 dark:text-green-500 hover:underline "
+                    ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                      </svg>
+                      
+                      
+                  </a>
+                </td>
+              </ng-container>
+
+              <ng-container>
+                <td class="px-6 py-4">
+                  <a
+                    (click)="rejectItem(item)"
+                    class="font-medium text-red-600 dark:text-red-500 hover:underline"
+                    ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
+                      </svg>
+                      
+                  </a>
+                </td>
+              </ng-container>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

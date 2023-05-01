@@ -1,0 +1,33 @@
+<div class="login-form">
+  <div class="logo">
+    <img src="../../../assets/images/login.svg" alt="Your Logo" />
+  </div>
+  <form [formGroup]="emailLogin" (ngSubmit)="getOtp()">
+    <div class="form-group" *ngIf="showDiv">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email"
+        formControlName="email"
+        required
+      />
+      <button type="submit" [disabled]="emailLogin.pristine || emailLogin.invalid" class="button" >Get OTP</button>
+    </div>
+  </form>
+  <form [formGroup]="otpLogin" (ngSubmit)="login()">
+    <div class="form-group" *ngIf="!showDiv">
+      <label for="password">Enter OTP</label>
+      <input
+        type="text"
+        id="password"
+        name="password"
+        placeholder="Enter your OTP"
+        formControlName="otp"
+        required
+      />
+      <button type="submit" [disabled]="otpLogin.pristine || otpLogin.invalid" class="button" >Login</button>
+    </div>
+  </form>
+</div>

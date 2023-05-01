@@ -1,0 +1,20 @@
+a{
+    cursor:pointer
+}
+
+tr {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  tr.delete {
+    opacity: 0;
+  }
+
+  .table-container{
+    max-height: 400px; /* set a fixed height for the list container */
+    overflow-y: auto; /* add a vertical scrollbar */
+  }
+  table {
+    width: 100%; /* set table width to 100% */
+  }

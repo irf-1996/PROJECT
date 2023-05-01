@@ -1,0 +1,81 @@
+a{
+    cursor: pointer;
+}
+
+tr {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  tr.delete {
+    opacity: 0;
+  }
+
+  .table-container{
+    max-height: 400px; /* set a fixed height for the list container */
+    overflow-y: auto; /* add a vertical scrollbar */
+  }
+  table {
+    width: 100%; /* set table width to 100% */
+  }
+
+
+  .card {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 10px;
+  }
+  
+  .card-content {
+    padding: 10px;
+  }
+  
+  .field {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    color: #666666;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px;
+    width: 120px;
+  }
+  
+  .value {
+    font-size: 14px;
+  }
+  
+  .message-box {
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    height: 150px;
+    overflow: auto;
+    padding: 10px;
+  }
+  
+  .message-box p {
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .field {
+      flex-wrap: wrap;
+    }
+  
+    label {
+      width: 100%;
+    }
+  }
+  

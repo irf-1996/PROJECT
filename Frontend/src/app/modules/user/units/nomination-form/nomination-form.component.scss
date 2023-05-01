@@ -1,0 +1,119 @@
+
+@import 'src/assets/styles/global_style.scss';
+
+h3{
+    cursor: pointer;
+    :hover{
+        color: #000;
+    }
+}
+
+.nomination-form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .left-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .left-side img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .right-side {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  textarea,
+  input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  textarea {
+    height: 100px;
+  }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('../../../../../assets/images/up-and-down.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 1em;
+    padding-right: 1.5em;
+  }
+  
+  select::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0.5em;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.5em 0.5em 0 0.5em;
+    border-color: #5e5e5e transparent transparent transparent;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+
+  button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ed786a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 767px) {
+    .nomination-form {
+      flex-direction: column;
+    }
+  
+    .left-side {
+      order: 2;
+    }
+  
+    .right-side {
+      order: 1;
+    }
+  }
+  
+
+  button:disabled{
+    cursor:none
+  }

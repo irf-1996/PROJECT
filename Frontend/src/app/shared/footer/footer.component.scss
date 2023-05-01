@@ -1,0 +1,12 @@
+@import 'src/assets/styles/global_style.scss';
+input.ng-pristine {
+    border-color:yellow !important;
+}
+
+input.ng-touched.ng-invalid {
+    border-color:red !important;
+}
+
+input.ng-touched.ng-valid {
+    border-color:green !important;
+}

@@ -1,0 +1,68 @@
+<div id="page-wrapper">
+  <!-- Header -->
+
+  <section id="header">
+    <div class="container forSpace ">
+      <!-- Logo -->
+      
+        
+     
+     
+
+      <!-- Nav -->
+      <nav id="nav">
+        <span class="logo" routerLink="/">
+          <img width="150px" src="../../../assets/images/logo.png"/>
+        </span>
+        <ul>
+          <li>
+            <a class="icon solid fa-home" routerLink="/"><span>Home</span></a>
+          </li>
+
+          <li>
+            <a class="icon solid fa-volume-high" style="cursor: pointer;" (click)='hub()'
+              ><span>Candidate Hub</span></a
+            >
+          </li>
+
+          <li>
+            <a class="icon solid fa-right-to-bracket" (click)="logout()"
+              ><span>Logout</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+
+            <!-- Banner -->
+            <section class="topMargin" >
+              <img width="100%"  src="../../../../assets/images/RSU-Elections-2023-Page-Banner.png" alt="">
+         </section>
+         <ul class="actions" *ngIf="showNominationButton">
+           <li>
+             <a routerLink="nomination" class="button icon solid fa-file"
+               >Nominate yourself
+             </a>
+           </li>
+         </ul>
+   
+    </div>
+  </section>
+
+
+
+
+  <!-- Features -->
+  <section id="features">
+    <div class="container">
+      <header>
+        <h2><strong>Leadership Roles</strong> in Elections</h2>
+      </header>
+      <app-card></app-card>
+    </div>
+  </section>
+
+ 
+  
+
+<app-footer> </app-footer>
+</div>

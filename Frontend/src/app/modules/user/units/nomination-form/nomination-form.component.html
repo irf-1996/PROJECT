@@ -1,0 +1,79 @@
+<div class="container py-5">
+  <h3 (click)="goBack()">
+    <span class="icon solid fa-left-long"></span><strong>Go back</strong>
+  </h3>
+  <div class="nomination-form">
+    <div class="left-side">
+      <img
+        class="image-fluid"
+        src="../../../../../assets/images/nom.svg"
+        alt="Nomination Image"
+      />
+    </div>
+    <div class="right-side text-bg-light rounded-1">
+      <h2>Hey! It's your chance</h2>
+      <form [formGroup]="myFormGroup" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            placeholder="Enter the nominee's name"
+            required
+            formControlName="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="name">Email</label>
+          <input
+            type="email"
+            placeholder="Enter your university email address"
+            required
+            formControlName="email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="name">Year of study</label>
+          <input
+            type="text"
+            placeholder=""
+            required
+            formControlName="year"
+          />
+        </div>
+        <div class="form-group">
+          <label for="position">I wish to stand for the position</label>
+          <select
+            id="position"
+            name="position"
+            required
+            formControlName="position"
+            [(ngModel)]="selectedItem"
+            (change)="onSelectionChange()"
+          >
+            <option [ngValue]="p" *ngFor="let p of position">{{ p.title }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="description">Tell us about the candidate</label>
+          <textarea
+            
+            name="description"
+            placeholder="Enter a brief description about the candidate"
+            required
+            formControlName="desc"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input type="text" id="image" formControlName="img" placeholder="Enter image url " />
+        </div>
+
+        <div class="form-group pb-8 ">
+          <input type="checkbox" style="cursor:pointer"  formControlName="declaration" /> <label>I hereby decalre that the above details are true to my knowledge</label>
+        </div>
+       
+        <button type="submit"[disabled]="myFormGroup.invalid" >Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

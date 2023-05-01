@@ -1,0 +1,61 @@
+@import 'src/assets/styles/global_style.scss';
+
+
+.flexDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    h3{
+        cursor: pointer;
+        :hover{
+            color: #000;
+        }
+    }
+}
+
+
+.spaceAbove{
+    margin-top:40px
+}
+.para{
+    padding:5% 10%
+   
+}
+
+.bgColor{
+    background-color:brown;
+    padding: 50px 50px;
+    border-radius: 5px;
+}
+
+.spanP{
+    font-weight:800;
+    color:rgb(185, 203, 237)
+    
+}
+
+ul,li {
+    text-decoration:none !important;
+}
+
+.dates{
+    color:rgb(185, 203, 237);
+    
+    strong{
+        color:white;
+        font-weight:600;
+
+    }
+}
+
+.bgColor2{
+    background-color:rgb(237, 236, 236);
+    padding: 50px 50px;
+    border-radius: 5px;
+    h2{
+        color:black
+    }
+    p{
+        color:rgb(150, 148, 148)
+    }
+}

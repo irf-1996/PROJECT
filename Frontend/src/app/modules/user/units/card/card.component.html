@@ -1,0 +1,11 @@
+<div class="row aln-center">
+<div class="col-4 col-6-medium col-12-small" *ngFor="let position of positions; let i = index">
+    <!-- Feature -->
+    <section>
+      <a class="image featured " style="background-image: url('../../../assets/images/election-card.jpg');" (click)="goto(position)" routerLink="/candidates"
+        >{{position.title}}
+      </a>
+      <span class='already-voted' *ngIf="position.voters.includes(userEmail)">Vote casted</span>
+    </section>
+</div>
+</div>

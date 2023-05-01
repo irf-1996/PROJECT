@@ -1,0 +1,108 @@
+<!-- header  -->
+
+<div class="flexDiv pt-5 ">
+    <h3 style="text-align: center; margin: 20px 0" (click)="goBack()">
+      <span class="icon solid fa-left-long"></span><strong>Go back</strong>
+    </h3>
+    <h2 style="text-align: center; margin: 20px 0">
+      Meet the <strong>Winners!</strong>
+    </h2>
+  </div>
+  
+  <!-- master div  -->
+  <div class="container">
+  
+    <!-- listing candidates  -->
+    <div class="row aln-center" style="margin: 20px">
+      <div class="col-4 col-6-medium col-12-small" *ngFor="let candidate of lists">
+        <!-- Feature -->
+        <section class ="section">
+          <a
+          (click)="viewItem(candidate)"
+          data-bs-toggle="modal"
+          data-bs-target="#viewUserWinner"
+            class="image featured m-auto"
+          
+            style="cursor: pointer"
+            ><img class="imgSize" src="{{ candidate.winner.img }}" alt=""
+          /></a>
+          <header>
+            <h3 class="text-center">{{ candidate.winner.name }}</h3>
+          </header>
+          <p class=" pos m-auto text-green-900 ">
+            <i class="p-2 bi bi-trophy text-amber-900  "></i>{{ candidate.title }}
+          </p>
+        </section>
+      </div>
+    </div>
+   
+  </div>
+
+
+ <!-- Add Modal -->
+ <div
+ class="modal fade "
+ id="viewUserWinner"
+ tabindex="-1"
+ aria-labelledby="exampleModalLabel"
+ aria-hidden="true"
+ role="dialog"
+>
+ <div class="modal-dialog modal-dialog-centered">
+   <div class="modal-content">
+    
+     <div class="modal-body">
+       <div
+       
+       class="relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
+     >
+       <span
+         class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
+       ></span>
+     
+       <div class="sm:flex sm:justify-between sm:gap-4">
+         <div>
+           <h3 class="text-lg font-bold text-gray-900 sm:text-xl">
+             {{this.selected.name}}
+           </h3>
+     
+           <p class="mt-1 text-xs font-medium text-gray-600">for {{this.selected.position}}</p>
+         </div>
+     
+         <div class="hidden sm:block sm:shrink-0">
+           <img
+             alt="Paul Clapton"
+             src="{{this.selected.img}}"
+             class="h-16 w-16 rounded-lg object-cover shadow-sm"
+           />
+         </div>
+       </div>
+     
+       <div class="mt-4">
+         <p class="max-w-[40ch] text-sm text-gray-500">
+           {{this.selected.desc}}
+         </p>
+       </div>
+     
+       <dl class="mt-6 flex gap-4 sm:gap-6">
+         <div class="flex flex-col-reverse">
+           <dt class="text-sm font-medium text-gray-600">{{this.selected.year}}</dt>
+           <dd class="text-xs text-gray-500">Year of study</dd>
+         
+         </div>
+     
+         <div class="flex flex-col-reverse">
+           <dt class="text-sm font-medium text-gray-600">{{this.selected.email}}</dt>
+           <dd class="text-xs text-gray-500">Email</dd>
+         </div>
+       </dl>
+     </div>
+     
+     
+       
+     </div>
+   </div>
+ </div>
+</div>
+
+

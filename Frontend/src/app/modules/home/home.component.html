@@ -1,0 +1,52 @@
+<div id="page-wrapper">
+  <!-- Header -->
+  <section id="header">
+    <div class="container forSpace ">
+      <!-- Logo -->
+      
+        
+     
+     
+
+      <!-- Nav -->
+      <nav id="nav">
+        <span class="logo" routerLink="/">
+          <img width="150px" src="../../../assets/images/logo.png"/>
+        </span>
+        <ul>
+          <li>
+            <a class="icon solid fa-home" routerLink="/"><span>Home</span></a>
+          </li>
+
+          <li>
+            <a (click)="hub()"
+             class="icon solid fa-volume-high" style="cursor: pointer;" (click)="scroll(voting)"
+              ><span>Candidate Hub</span></a
+            >
+          </li>
+
+          <li>
+            <a class="icon solid fa-right-to-bracket" routerLink="/login"
+              ><span>Login</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+
+
+  <!-- Banner -->
+  <section class="container">
+    <img width="100%"  src="../../../../assets/images/RSU-Elections-2023-Page-Banner.png" alt="">
+</section>
+
+  <!-- Main -->
+  <ng-container #voting>
+    <app-voting-explained ></app-voting-explained>
+
+  </ng-container >
+
+<app-footer> </app-footer>
+</div>

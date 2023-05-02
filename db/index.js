@@ -3,7 +3,7 @@ const mongoURI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017'
 const Login = require('../models/login')
 mongoose
   .connect(mongoURI, {
-    dbName: process.env.DB_NAME,
+    dbName: 'STV',
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -31,7 +31,7 @@ mongoose
 
 
   mongoose.connection.on("connected", () => {
-    console.log(`Mongoose connected to ${process.env.DB_NAME}`);
+    console.log(`Mongoose connected to STV`);
   });
   
   mongoose.connection.on("error", (err) => {

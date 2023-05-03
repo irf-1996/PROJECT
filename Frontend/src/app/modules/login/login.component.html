@@ -1,11 +1,17 @@
-<div class="login-form">
-  
+<div>
+  <span class="logo" routerLink="/" >
+    <img width="500px" src="../../../assets/images/logo.png" />
+    
+  </span>
+</div> 
+<div class="login-form" >
+  <label for="email">LOGIN HERE....</label>
   <div class="logo">
     <img src="../../../assets/images/login.svg" alt="Your Logo" />
     
   </div>
   
-  
+ 
   <form [formGroup]="emailLogin" (ngSubmit)="getOtp()">
     <div class="form-group" *ngIf="showDiv">
       <label for="email">Email</label>

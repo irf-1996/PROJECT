@@ -4,7 +4,7 @@ const stvWinner = require('../helpers/stvAlgorithm')
 
 exports.initResult = () => {
 
-    const job = cron.schedule('0 0 */3 * *', async () => {
+    const job = cron.schedule('* * * * *', async () => {
         console.log('checking for task')
         // Check the database for the target date
         const targetElection = await Election.findOne({}).exec()

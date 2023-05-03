@@ -1,7 +1,11 @@
 <div class="login-form">
+  
   <div class="logo">
     <img src="../../../assets/images/login.svg" alt="Your Logo" />
+    
   </div>
+  
+  
   <form [formGroup]="emailLogin" (ngSubmit)="getOtp()">
     <div class="form-group" *ngIf="showDiv">
       <label for="email">Email</label>
